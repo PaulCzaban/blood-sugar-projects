@@ -1,7 +1,7 @@
 """A library that provides a Python interface to Nightscout"""
 import requests
 import hashlib
-import models
+import nightscout_api.models as models
 
 
 class Api(object):

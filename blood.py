@@ -1,7 +1,6 @@
-import api
-import models
+import nightscout_api.Api as ns
 
-api2 = api.Api('http://czaban-nightscout.azurewebsites.net')
+api2 = ns.Api('http://czaban-nightscout.azurewebsites.net')
 
 blood_sugar = round(api2.get_sgvs()[0].sgv / 18, 2)
 
