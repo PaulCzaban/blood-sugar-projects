@@ -44,7 +44,10 @@ class SGV(BaseModel):
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            if param == 'sgv':
+                setattr(self, param, round(kwargs.get(param, default) / 18, 2))
+            else:
+                setattr(self, param, kwargs.get(param, default))
 
     @classmethod
     def json_transforms(cls, json_data):
